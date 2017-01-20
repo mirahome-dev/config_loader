@@ -1,0 +1,15 @@
+{
+    "name": "mira/config_loader",
+    "type": "library",
+    "license": "The Unlicense",
+    "authors": [
+        {
+            "name": "zhoubin",
+            "email": "zhoubin@mirahome.me"
+        }
+    ],
+    "require": {
+        "kyoz/zookeeper-client": "^1.0",
+        "kyoz/php-utils": "^1.0"
+    }
+}

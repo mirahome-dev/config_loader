@@ -11,5 +11,8 @@
     "require": {
         "kyoz/zookeeper-client": "^1.0",
         "kyoz/php-utils": "^1.0"
+    },
+    "autoload": {
+        "files": ["config_loader.php"]
     }
 }

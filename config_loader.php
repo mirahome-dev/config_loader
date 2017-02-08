@@ -4,9 +4,7 @@
 //require 'vendor/autoload.php';
 
 function load_config($path = '/mira', $configs = null) {
-    if(empty($zk)) {
-        $zk = new \Kyoz\ZookeeperClient('zk01:2181,zk02:2181,zk03:2181');
-    }
+    $zk = \Kyoz\ZookeeperClient::getInstance('zk01:2181,zk02:2181,zk03:2181');
     if($configs === null) $configs = [];
     $list = $zk->getChildren($path);
     if(!empty($list) && is_array($list)) {
@@ -21,7 +19,7 @@ function load_config($path = '/mira', $configs = null) {
 
 function get_env() {
     $eth0Ip = \Kyoz\Utils\Network::getEthIp();
-    $zk = new \Kyoz\ZookeeperClient('zk01:2181,zk02:2181,zk03:2181');
+    $zk = \Kyoz\ZookeeperClient::getInstance('zk01:2181,zk02:2181,zk03:2181');
     $mapJson = $zk->get('/mira/envEth0Map');
     $map = json_decode($mapJson);
     foreach($map as $env => $ips) {
